@@ -1,0 +1,47 @@
+{
+	"name": "vite-plugin-ksv-test",
+	"version": "0.0.1",
+	"description": "",
+	"license": "MIT",
+	"type": "module",
+	"main": "dist/index.js",
+	"module": "dist/index.mjs",
+	"exports": {
+		"import": "./dist/index.mjs",
+		"require": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
+		}
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/releaseband/vite-plugin-meta.git"
+	},
+	"scripts": {
+		"build": "tsup-node src/index.ts --sourcemap --dts --format cjs,esm",
+		"dev": "pnpm bundle --watch"
+	},
+	"dependencies": {
+		"ffmpeg-static": "^5.1.0",
+		"get-audio-duration": "^3.1.1",
+		"picocolors": "^1.0.0",
+		"sharp": "^0.31.2"
+	},
+	"devDependencies": {
+		"@types/sharp": "^0.31.0",
+		"tsup": "^6.7.0",
+		"typescript": "^5.0.2",
+		"vite": "*"
+	},
+	"peerDependencies": {
+		"vite": "*"
+	},
+	"peerDependenciesMeta": {
+		"vite": {
+			"optional": true
+		}
+	}
+}
